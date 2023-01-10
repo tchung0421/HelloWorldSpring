@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.w3.org/2001/XMLSchema"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="learner" class="org.snva.hws.beans.Role">
+        <property name="roleName" value="learner"/>
+        <property name="roleId" value="1"/>
+        <property name="roleDescription" value="learner role"/>
+    </bean>
+
+    <bean id="architect" class="org.snva.hws.beans.Role">
+        <property name="roleName" value="architect"/>
+        <property name="roleId" value="2"/>
+        <property name="roleDescription" value="architect role"/>
+    </bean>
+
+    <bean id="admin" class="org.snva.hws.beans.Role">
+        <property name="roleName" value="admin"/>
+        <property name="roleId" value="3"/>
+        <property name="roleDescription" value="admin role"/>
+    </bean>
+
+    <bean id="thomas" class="org.snva.hws.beans.User">
+        <property name="userId" value="1"/>
+        <property name="userName" value="tec"/>
+        <property name="firstName" value="Thomas"/>
+        <property name="lastName" value="Chung"/>
+        <property name="email" value="tchung0421@gmail.com"/>
+        <property name="password" value="123456"/>
+        <property name="contact" value="1234567890"/>
+        <property name="roles">
+            <list value-type="org.snva.hws.beans.Role">
+                <ref bean="learner"></ref>
+                <ref bean="admin"></ref>
+                <ref bean="architect"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="alex" class="org.snva.hws.beans.User">
+        <property name="userId" value="1"/>
+        <property name="userName" value="alex"/>
+        <property name="firstName" value="Alex"/>
+        <property name="lastName" value="Chung"/>
+        <property name="email" value="tchung0421@gmail.com"/>
+        <property name="password" value="123456"/>
+        <property name="contact" value="1234567890"/>
+        <property name="roles">
+            <list value-type="org.snva.hws.beans.Role">
+                <ref bean="learner"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <util:list>
+
+    </util:list>
+
+    <bean id="viet" class="org.snva.hws.beans.User">
+        <property name="userId" value="1"/>
+        <property name="userName" value="viet"/>
+        <property name="firstName" value="Viet"/>
+        <property name="lastName" value="Chung"/>
+        <property name="email" value="tchung0421@gmail.com"/>
+        <property name="password" value="123456"/>
+        <property name="contact" value="1234567890"/>
+        <property name="roles">
+            <list value-type="org.snva.hws.beans.Role">
+                <ref bean="admin"></ref>
+                <ref bean="architect"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id = "users" class = "java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="thomas"></ref>
+                <ref bean="alex"></ref>
+                <ref bean="viet"></ref>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
