@@ -59,7 +59,7 @@ public class UsersConfig {
     private List<User> loadFromFile(){
         List<User> users = new ArrayList<>();
         try{
-            byte[] allBytes=Files.readAllBytes(Paths.get("C:\\Users\\Se-Lim Oh\\Code\\HelloWorldSpring\\users.txt"));
+            byte[] allBytes=Files.readAllBytes(Paths.get("users.txt"));
             String allLines = new String(allBytes);
             for (String line: allLines.split("\n")) {
                 String cols[] = line.split(",");
